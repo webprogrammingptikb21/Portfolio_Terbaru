@@ -6,6 +6,13 @@
     <title>PortFolio Tailwind CSS</title>
     <link href="dist/output.css" rel="stylesheet" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script>
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
     <!-- Header Start-->
@@ -44,7 +51,7 @@
                 <li class="group">
                   <a href="#contact" class="text-dark text-base py-2 mx-8 flex group-hover:text-primary dark:text-white">Kontak</a>
                 </li>
-                <li class="flex items-center pl-8 mt-3">
+                <li class="flex items-center pl-8 mt-3 lg:mt-0">
                   <div class="flex">
                     <span class="mr-2 text-sm text-slate-500">Light</span>
                     <input type="checkbox" class="hidden" id="darkToggle" />
